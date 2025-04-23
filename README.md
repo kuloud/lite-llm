@@ -50,6 +50,38 @@ uvicorn app.main:app --reload
 
 You can access the API documentation at `http://127.0.0.1:8000/docs`.
 
+## Deployment on Vercel
+
+This project is deployed on Vercel and uses the Python runtime with Serverless Functions. The FastAPI app is accessible at:
+
+**Base URL**: `https://lite-llm.vercel.app/api`
+
+### Example Endpoints
+
+- **Chat with GitHub Models**: `/api/models/chat`
+  - **Method**: POST
+  - **Request Body**:
+    ```json
+    {
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a helpful assistant."
+        },
+        {
+          "role": "user",
+          "content": "What is the capital of France?"
+        }
+      ]
+    }
+    ```
+  - **Response**:
+    ```json
+    {
+      "response": "The capital of France is Paris."
+    }
+    ```
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or features.
