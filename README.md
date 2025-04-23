@@ -20,9 +20,13 @@ lite-llm
 ## Setup Instructions
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone <repository-url>
    cd lite-llm
+   ```
+1. Create a virtual environment:
+   ```bash
+   python3.12 -m venv venv
    ```
 
 1. Activate the virtual environment:
@@ -31,7 +35,7 @@ lite-llm
      venv\Scripts\activate
      ```
    - On macOS/Linux:
-     ```
+     ```bash
      source venv/bin/activate
      ```
 
