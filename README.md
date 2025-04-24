@@ -7,6 +7,8 @@ This project is a FastAPI application designed to provide an lightweight LLM ser
 
 ```
 lite-llm
+├── api
+│   ├── index.py         # Contains serverless functions for Vercel
 ├── app
 │   ├── main.py          # Entry point of the FastAPI application
 │   ├── routers          # Contains route definitions
@@ -21,7 +23,7 @@ lite-llm
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:kuloud/lite-llm.git
    cd lite-llm
    ```
 1. Create a virtual environment:
@@ -52,13 +54,17 @@ To run the FastAPI application, use the following command:
 uvicorn app.main:app --reload
 ```
 
-You can access the API documentation at `http://127.0.0.1:8000/docs`.
+## API Documentation
+You can access the interactive API documentation provided by FastAPI at the following URLs:
+
+Swagger UI: https://lite-llm.vercel.app/docs
+ReDoc: https://lite-llm.vercel.app/redoc
 
 ## Deployment on Vercel
 
 This project is deployed on Vercel and uses the Python runtime with Serverless Functions. The FastAPI app is accessible at:
 
-**Base URL**: `https://lite-llm.vercel.app/api`
+**Base URL**: `https://lite-llm.vercel.app`
 
 ### Example Endpoints
 
@@ -85,6 +91,16 @@ This project is deployed on Vercel and uses the Python runtime with Serverless F
       "response": "The capital of France is Paris."
     }
     ```
+
+## WebSocket Endpoints
+
+### `/ws`
+This WebSocket endpoint is used to interact with GitHub models.
+
+#### Connection
+To establish a WebSocket connection, use the following URL:
+```plaintext
+ws://your - server - address/ws/github - model
 
 ## Contributing
 

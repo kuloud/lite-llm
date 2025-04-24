@@ -1,19 +1,15 @@
-from app.core.logging_config import setup_logging
-
-setup_logging()
-
 import logging
 
 from fastapi import APIRouter, HTTPException
 from app.schemas.chat_request import ChatRequest
 from app.services.github_models_service import ModelsService
 
-logger = logging.getLogger(__name__)
+from app.utils.logger import logger
 
-router = APIRouter(prefix="/api", tags=["Models"])
+router = APIRouter(prefix="/models", tags=["Models"])
 
 
-@router.post("/models/chat", summary="Chat with GitHub Models")
+@router.post("/chat", summary="Chat with GitHub Models")
 async def chat_with_models(request: ChatRequest):
     """
     Handle chat requests with GitHub models.
